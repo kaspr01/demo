@@ -53,11 +53,6 @@ stage("Acceptance test") {
      always {
          sh "docker-compose down"
      }
-	post {  
-         always {  
-		echo 'SUCCESS'
-		mail bcc: 'prabhuprabhuks@yahoo.com', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "prabhuprabhuks@yahoo.com"; 
-         }  
          success {  
              echo 'This will run only if successful'  
          }  

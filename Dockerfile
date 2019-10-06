@@ -1,3 +1,3 @@
 FROM frolvlad/alpine-java
-COPY bbuild/libs/pipeline-jenkinsfile-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/pipeline-jenkinsfile-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]

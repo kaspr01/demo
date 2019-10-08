@@ -38,7 +38,7 @@ stage("Deploy to staging") {
      steps {
 	
          // sh "docker run -d --rm -p 8765:8080 --name calculator_1 nikhilnidhi/calculator_1"
-		 sh "docker-compose up -d"
+		 sh "/usr/local/bin/docker-compose up -d"
      }
 }
 
@@ -51,7 +51,7 @@ stage("Acceptance test") {
      }
 	 post {
      always {
-         sh "docker-compose down"
+         sh "/usr/local/bin/docker-compose down"
      }
 	success {  
              echo 'This will run only if successful'  

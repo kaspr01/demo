@@ -7,12 +7,12 @@ pipeline {
                }
           }
          
-		   //stage("Code coverage") {
-  //   steps {
-         // sh "./gradlew jacocoTestReport"
-         // sh "./gradlew jacocoTestCoverageVerification"
-     //}z
-//}
+		   stage("Code coverage") {
+     steps {
+          sh "./gradlew jacocoTestReport"
+         sh "./gradlew jacocoTestCoverageVerification"
+     }
+}
 		  
 stage("Package") {
      steps {
